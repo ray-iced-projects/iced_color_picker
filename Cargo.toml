@@ -1,0 +1,17 @@
+[package]
+name = "iced_color_picker"
+version = "0.1.0"
+edition = "2024"
+authors = ["Charles Ray <ray.iced.projects@gmail.com>"]
+description = "A color picker widget for the iced GUI framework"
+license = "MIT"
+repository = "https://github.com/..."
+keywords = ["iced", "color-picker", "gui", "widget"]
+categories = ["gui"]
+
+[lib]
+name = "iced_color_picker"
+path = "src/lib.rs"
+
+[dependencies]
+iced = { git = "https://github.com/iced-rs/iced", rev = "4255f61", features = ["advanced", "debug", "canvas"] }
