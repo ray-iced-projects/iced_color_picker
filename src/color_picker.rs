@@ -87,8 +87,9 @@ where
 
 impl<'a, Message, Theme, Renderer> ColorPicker<'a, Message, Theme, Renderer>
 where
-    Theme: container::Catalog,
-    Renderer: text::Renderer,
+    Message: 'a,
+    Theme: container::Catalog + 'a,
+    Renderer: text::Renderer + 'a,
 {
     /// The default padding of a [`ColorPicker`] drawn by this renderer.
     const DEFAULT_PADDING: f32 = 5.0;
@@ -104,7 +105,7 @@ where
     ) -> Self {
         ColorPicker {
             button: button.into(),
-            content: content.into(),
+            content: iced::widget::opaque(content.into()),
             selected_color: selected_color.into(),
             position,
             gap: 0.0,
