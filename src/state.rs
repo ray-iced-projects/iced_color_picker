@@ -240,12 +240,12 @@ impl ColorPickerState {
         )
         .into();
 
+        let cp_col = column(vec![grad_hue_col, srow]).spacing(3.0);
         let final_col: Element<M> = if show_palette {
             let pal = palette_panel(color);
-            let rw = row(vec![pal, grad_hue_col]).spacing(8.0).into();
-            column(vec![rw, srow]).into()
+            row(vec![pal, cp_col.into()]).spacing(5.0).into()
         } else {
-            column(vec![grad_hue_col, srow]).into()
+            cp_col.into()
         };
 
         container(final_col)
