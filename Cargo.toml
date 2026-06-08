@@ -14,4 +14,4 @@ name = "iced_color_picker"
 path = "src/lib.rs"
 
 [dependencies]
-iced = { git = "https://github.com/iced-rs/iced", rev = "4255f61", features = ["advanced", "debug", "canvas"] }
+iced = { git = "https://github.com/iced-rs/iced", branch = "master", features = ["advanced", "debug", "canvas"] }
